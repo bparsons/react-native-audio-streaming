@@ -63,6 +63,10 @@ RCT_EXPORT_MODULE()
    [self.audioPlayer setDelegate:nil];
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
 
 #pragma mark - Pubic API
 
