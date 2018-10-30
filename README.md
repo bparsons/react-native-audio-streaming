@@ -1,14 +1,9 @@
 
 # react-native-audio-streaming
 
-## THIS PROJECT IS NOT MAINTAINED
+## THIS PROJECT IS NOT ACTIVELY MAINTAINED
 
-react-native-audio-streaming is not maintained anymore. The main purpose was to play shoutcast streams with meta data and display a notification while playing.
-
-Please see other projects like
-
-- [jsierles/react-native-audio](https://github.com/jsierles/react-native-audio) to play local audio and record
-- [zmxv/react-native-sound](https://github.com/zmxv/react-native-sound) to play local audio with more controls
+This is a fork from [tlenclos/react-native-audio-streaming](https://github.com/tlenclos/react-native-audio-streaming) with a few updates.
 
 ## Features
 
@@ -121,7 +116,6 @@ class PlayerUI extends Component {
 
 ## TODO
 
-- [ ] Allow to play local files
 - [ ] Allow to specify custom style for the android notification (maybe a custom view ?)
 - [ ] Allow to specify custom styles for the player
 - [ ] Handle artwork of artist
@@ -129,10 +123,11 @@ class PlayerUI extends Component {
 
 ## Credits
 
+- Original Project by @tlenclos https://github.com/tlenclos/react-native-audio-streaming
 - Android version based on the work of @EstebanFuentealba https://github.com/EstebanFuentealba/react-native-android-audio-streaming-aac
 - iOS version based on the work of @jhabdas https://github.com/jhabdas/lumpen-radio
 
-See also the list of [contributors](https://github.com/tlenclos/react-native-audio-streaming/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/bparsons/react-native-audio-streaming/graphs/contributors) who participated in this project.
 
 ## Contribute
 

@@ -16,6 +16,10 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import javax.annotation.Nullable;
+import android.os.PowerManager;
+import android.os.Build;
+import android.provider.Settings;
+import android.net.Uri;
 
 public class ReactNativeAudioStreamingModule extends ReactContextBaseJavaModule
     implements ServiceConnection {
@@ -89,7 +93,19 @@ public class ReactNativeAudioStreamingModule extends ReactContextBaseJavaModule
     this.shouldShowNotification =
         options.hasKey(SHOULD_SHOW_NOTIFICATION) && options.getBoolean(SHOULD_SHOW_NOTIFICATION);
     signal.setURLStreaming(streamingURL); // URL of MP3 or AAC stream
-    playInternal();
+    // If Android Version > M ask for Background permissions
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        String packageName = context.getPackageName();
+        PowerManager pm =  (PowerManager) getReactApplicationContext().getSystemService(Context.POWER_SERVICE);
+        if (pm.isIgnoringBatteryOptimizations(packageName)) {
+            playInternal();
+        } else {
+            Intent batterySaverIntent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, Uri.parse("package:" + packageName));
+            context.startActivity(batterySaverIntent);
+        }
+    } else {
+        playInternal();
+    }
   }
 
   private void playInternal() {
