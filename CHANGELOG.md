@@ -1,5 +1,9 @@
 # Change Log
 
+- Prompt for background permission on Android 6+
+- Use app display name for notification
+
+
 ## [v2.3.2](https://github.com/tlenclos/react-native-audio-streaming/tree/v2.3.2) (2017-02-25)
 [Full Changelog](https://github.com/tlenclos/react-native-audio-streaming/compare/v2.3.1...v2.3.2)
 

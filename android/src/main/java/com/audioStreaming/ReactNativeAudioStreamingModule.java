@@ -102,6 +102,7 @@ public class ReactNativeAudioStreamingModule extends ReactContextBaseJavaModule
         } else {
             Intent batterySaverIntent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, Uri.parse("package:" + packageName));
             context.startActivity(batterySaverIntent);
+            playInternal();
         }
     } else {
         playInternal();
